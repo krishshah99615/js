@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Personal expense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>body
+    {
+      display:flex;
+      justify-content:center;
+      flex-direction:column;  
+      align-items: center;
+      height:100vh;
+    }
+  </style>
+ 
+</head>
+<body>
+  <h1 id="heading"> </h1>
+  <input id="input1" type="text" >
+  <input id="input2" type="text">
+    <button id="btn1">+ </button>
+    <script>
+      
+      let totalExpense =0;
+      const hea = document.querySelector("#heading");
+      const element1 = document.querySelector("#input1");
+      const element2 = document.querySelector("#input2");
+      const l =[];
+      
+      function addexp()
+      
+      
+      { let entry={}
+        entry.amt=element1.value;
+        entry.desc=element2.value;
+        totalExpense = totalExpense + parseInt(element1.value,10);
+        //console.log({totalExpense})
+        hea.textContent=totalExpense; 
+        console.clear;
+        l.push(entry);
+        const p =  l.map(entry => {return `<div> ${entry.amt} :: ${entry.desc} <div>`})
+         console.log(p);
+        
+      }
+      const ele = document.querySelector("#btn1");
+      ele.addEventListener("click",addexp,false);
+
+        
+    
+         </script>  
+  
+</body>
+</html>
